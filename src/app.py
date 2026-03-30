@@ -88,6 +88,21 @@ def get_activities():
     return activities
 
 
+@app.get("/exercise")
+def get_exercise_status():
+    return {
+        "issue": 1,
+        "title": "Exercise: Integrate MCP with Copilot",
+        "status": "in progress",
+        "description": "Implement MCP integration and user onboarding flow for the GitHub Skills exercise.",
+        "next_steps": [
+            "Add MCP config and endpoints",
+            "Add issue-linked PR and tests",
+            "Confirm with maintainer"
+        ]
+    }
+
+
 @app.post("/activities/{activity_name}/signup")
 def signup_for_activity(activity_name: str, email: str):
     """Sign up a student for an activity"""
